@@ -11,7 +11,8 @@ MySql Server 8.0
 MySql Workbench 8.0 CE
 Mysql Router 8.0
 
-Para crear el schema y la carga de datos inicial, ejecutar el script script_mapa_aplicaciones_dev.sql
+Para crear el schema, las tablas, las PK y FK, ejecutar el script script_mapa_aplicaciones_dev.sql
+Para la insersion de datos iniciales, ejecutar el script script_insersion_datos.sql
 
 Repositorio dedicado al curso de SQL de coderhouse
 Creado por Franco Carbone
