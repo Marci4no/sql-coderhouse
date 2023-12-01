@@ -62,6 +62,10 @@ Se desarollaron 4 triggers
 
 Para la creacion de triggers, ejecutar el script script_create_triggers_mapadev.sql
 
+## Usuarios y Roles ##
+
+Para la creacion de usuarios y la asignacion de permisos, ejecutar el script script_create_users_and_roles.sql
+
 Repositorio dedicado al curso de SQL de coderhouse
 Creado por Franco Carbone
 Octubre 2023
