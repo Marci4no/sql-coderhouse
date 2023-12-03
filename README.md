@@ -69,3 +69,7 @@ Para la creacion de usuarios y la asignacion de permisos, ejecutar el script scr
 Repositorio dedicado al curso de SQL de coderhouse
 Creado por Franco Carbone
 Octubre 2023
+
+## TCL ##
+
+Para visualizar ejemplo de transaccion con sentencias rollback, commit y savepoint, ejecutar el script script_tcl.sql
