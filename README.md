@@ -73,3 +73,8 @@ Octubre 2023
 ## TCL ##
 
 Para visualizar ejemplo de transaccion con sentencias rollback, commit y savepoint, ejecutar el script script_tcl.sql
+
+
+## Backup ##
+
+Para importar el dump del schema mapa_aplicaciones_dev, ejecutar el script mapa_dev20231203.sql
