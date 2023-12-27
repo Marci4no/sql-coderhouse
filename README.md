@@ -77,8 +77,6 @@ Para la creación de triggers, ejecutar el script `script_create_triggers_mapade
 
 Para la creación de usuarios y la asignación de permisos, ejecutar el script `script_create_users_and_roles.sql`.
 
-Repositorio dedicado al curso de SQL de coderhouse. Creado por Franco Carbone en octubre de 2023.
-
 ## TCL
 
 Para visualizar un ejemplo de transacción con sentencias rollback, commit y savepoint, ejecutar el script `script_tcl.sql`.
@@ -86,3 +84,5 @@ Para visualizar un ejemplo de transacción con sentencias rollback, commit y sav
 ## Backup
 
 Para importar el dump del schema mapa_aplicaciones_dev, ejecutar el script `mapa_dev26122023.sql`.
+
+Repositorio dedicado al curso de SQL de coderhouse. Creado por Franco Carbone en octubre de 2023.
