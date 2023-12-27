@@ -82,4 +82,4 @@ Para visualizar ejemplo de transaccion con sentencias rollback, commit y savepoi
 
 ## Backup ##
 
-Para importar el dump del schema mapa_aplicaciones_dev, ejecutar el script mapa_dev20231203.sql
+Para importar el dump del schema mapa_aplicaciones_dev, ejecutar el script mapa_dev26122023.sql
