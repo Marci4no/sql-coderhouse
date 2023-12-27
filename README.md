@@ -42,7 +42,7 @@ Se desarrollaron 5 vistas:
 4. Proyectos por Referente GCBA: Muestra los agentes asignados a cada proyecto, los referentes.
 5. Presupuestos por Ministerio: Muestra un detalle de los presupuestos de cada ministerio.
 
-Para la creación de views, ejecutar el script `script_viewsa_mapadev.sql`.
+Para la creación de views, ejecutar el script `script_views_mapadev.sql`.
 
 ## Funciones
 
