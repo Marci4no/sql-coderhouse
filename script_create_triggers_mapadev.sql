@@ -61,7 +61,7 @@ DELIMITER ;
 -- Se actualiza un registro existente y se inserta un nuevo registro en la tabla Proyecto
 UPDATE Proyecto SET proveedor_desarrollo = 'NuevoProveedor' WHERE id_proyecto = 'P1';
 INSERT INTO Proyecto (id_proyecto, id_reparticion, fecha_inicio, fecha_actualizacion, proveedor_desarrollo, id_referente, componentes)
-VALUES ('P4', 'MS', '2023-04-01', '2023-04-15', 'OtroProveedor', '20224457894', 20);
+VALUES ('P11', 'MS', '2023-04-01', '2023-04-15', 'OtroProveedor', '20224457894', 20);
 
 -- Visualizando los logs en Log Proyecto
 SELECT * FROM LogProyecto;
@@ -69,7 +69,7 @@ SELECT * FROM LogProyecto;
 -- Se actualiza un registro existente y se inserta un nuevo registro en la tabla Presupuesto
 UPDATE Presupuesto SET modalidad_contratacion = 'NuevaModalidad' WHERE id_pliego = 'Pliego1';
 INSERT INTO Presupuesto (id_pliego, id_proyecto, presupuesto_asignado_2023, modalidad_contratacion, fecha_inicio_contrato, fecha_actualizacion_contrato, fecha_fin_contrato, observaciones, proveedor_desarrollo)
-VALUES ('Pliego4', 'P2', 2000000.00, 'Modalidad4', '2023-04-01', '2023-04-15', '2023-12-31', 'Nuevo presupuesto asignado en dólares para el proyecto P2', 'NewProvider');
+VALUES ('Pliego11', 'P11', 2000000.00, 'Contratacion Directa', '2023-04-01', '2023-04-15', '2023-12-31', 'Nuevo presupuesto asignado en dólares para el proyecto P2', 'NewProvider');
 
 -- Visualizando los logs en Log Proyecto
 SELECT * FROM LogPresupuesto;

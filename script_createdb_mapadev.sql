@@ -70,13 +70,51 @@ CREATE TABLE IF NOT EXISTS Presupuesto (
     PRIMARY KEY (id_pliego)
 );
 
+-- Creación de la tabla Pago a Proveedores si no existe
+CREATE TABLE IF NOT EXISTS PagoProveedores (
+    id_pago VARCHAR(50) NOT NULL,
+    proveedor_desarrollo VARCHAR(50) NOT NULL,
+    ultimo_pago VARCHAR(100) NOT NULL,
+    proximo_pago VARCHAR(100) NOT NULL,
+    vencimiento_ultimo_pago DATE NOT NULL,
+    fecha_ultimo_pago DATE NOT NULL,
+    vencimiento_proximo_pago DATE NOT NULL,
+    adeuda BOOLEAN NOT NULL,
+    observaciones_pagos VARCHAR(300) NOT NULL,
+    PRIMARY KEY (id_pago)
+);
+
+-- Creación de la tabla Equipo de Desarrollo si no existe
+CREATE TABLE IF NOT EXISTS DatosEquipo (
+    id_equipo VARCHAR(100) NOT NULL,
+    proveedor_desarrollo VARCHAR(100) NOT NULL,
+    cantidad_miembros INT (100) NOT NULL,
+    id_proyecto VARCHAR(50) NOT NULL,
+    PRIMARY KEY (id_equipo)
+);
+
+-- Creación de la tabla Equipo de Desarrollo si no existe
+CREATE TABLE IF NOT EXISTS MiembrosEquipoDesarrollo (
+    id_miembro VARCHAR(100) NOT NULL,
+    proveedor_desarrollo VARCHAR(100) NOT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
+    edad INT (100) NOT NULL,
+    correo VARCHAR (100) NOT NULL,
+    rol VARCHAR(100) NOT NULL,
+    id_equipo VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id_miembro)
+);
+
 -- -- Agregado de FK
--- -- FK para la tabla Proyecto
+-- -- FK para la tabla Proyecto e indice para poder agregar proveedor_desarrollo como FK
 ALTER TABLE Proyecto
 ADD FOREIGN KEY (id_reparticion) REFERENCES Reparticion(id_reparticion);
 
 ALTER TABLE Proyecto
 ADD FOREIGN KEY (id_referente) REFERENCES ReferenteGCBA(id_referente);
+
+ALTER TABLE Proyecto ADD INDEX idx_proveedor_desarrollo (proveedor_desarrollo);
 
 -- FK para la tabla Presupuesto
 ALTER TABLE Presupuesto
@@ -89,3 +127,15 @@ ADD FOREIGN KEY (id_reparticion) REFERENCES Reparticion(id_reparticion);
 -- FK para la tabla Tecnologia
 ALTER TABLE Tecnologia
 ADD FOREIGN KEY (id_proyecto) REFERENCES Proyecto(id_proyecto);
+
+-- FK para la tabla Pagos a Proveedores
+ALTER TABLE PagoProveedores
+ADD FOREIGN KEY (proveedor_desarrollo) REFERENCES Proyecto(proveedor_desarrollo) ON UPDATE CASCADE;
+
+-- FK para la tabla Equipo de Desarrollo
+ALTER TABLE DatosEquipo
+ADD FOREIGN KEY (id_proyecto) REFERENCES Proyecto(id_proyecto);
+
+-- FK para la tabla Tecnologia
+ALTER TABLE MiembrosEquipoDesarrollo
+ADD FOREIGN KEY (id_equipo) REFERENCES DatosEquipo(id_equipo);

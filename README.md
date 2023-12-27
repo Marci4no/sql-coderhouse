@@ -18,6 +18,11 @@ Se han desarrollado 5 tablas
 3- Tecnologia
 4- Proyecto
 5- Presupuesto
+6- Pago a Proveedores
+7- Datos de los Equipos de Desarrollo
+8- Miembros de los Equipos de Desarrollo
+
+Adicionalmente, se crearan 2 tablas de Logs en la creacion de Triggers
 
 Para crear el schema, las tablas, las PK y FK, ejecutar el script script_mapa_aplicaciones_dev.sql
 
