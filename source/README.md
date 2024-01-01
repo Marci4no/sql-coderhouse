@@ -13,9 +13,9 @@ Base de datos dedicada a la auditoría, relevamiento y control de información d
 
 ## Repositorio
 
- - source: README del proyecto y DER de la Base de Datos
- - database: scripts para inicializar la Base de Datos
- - documentation: Documentacion relacionada al proyecto
+ - source: README del proyecto y DER de la Base de Datos.
+ - database: scripts para inicializar la Base de Datos.
+ - documentation: Documentacion relacionada al proyecto.
 
 ## Tablas
 
