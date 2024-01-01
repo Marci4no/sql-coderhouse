@@ -11,6 +11,12 @@ Base de datos dedicada a la auditoría, relevamiento y control de información d
 - MySql Workbench 8.0 CE
 - Mysql Router 8.0
 
+## Repositorio
+
+ - source: README del proyecto y DER de la Base de Datos
+ - database: scripts para inicializar la Base de Datos
+ - documentation: Documentacion relacionada al proyecto
+
 ## Tablas
 
 Se han desarrollado 8 tablas:
@@ -26,7 +32,7 @@ Se han desarrollado 8 tablas:
 
 Adicionalmente, se crearán 2 tablas de Logs en la creación de Triggers.
 
-Para crear el schema, las tablas, las PK y FK, ejecutar el script `script_mapa_aplicaciones_dev.sql`.
+Para la creacion de la estructura de tablas, ejecutar el script `script_createdb_mapadev.sql`.
 
 ## Inserción de Datos Iniciales
 
@@ -85,4 +91,19 @@ Para visualizar un ejemplo de transacción con sentencias rollback, commit y sav
 
 Para importar el dump del schema mapa_aplicaciones_dev, ejecutar el script `mapadev_20240101.sql`.
 
-Repositorio dedicado al curso de SQL de coderhouse. Creado por Franco Carbone en octubre de 2023.
+
+## ¿Como inicializar y crear la Base de Datos de acuerdo a los scripts de la carpeta database?
+
+A continuación, se dejara un paso a paso para ejecutar los scripts y crear la DB con todos sus componentes y objetos, se muestra el orden con formato de 1 a 10 y, previo a cada script, se nombra la carpeta que lo contiene
+
+1 - Crear la DB con su estructura de tablas - Ingresar a 01-create_db y ejecutar el script `script_createdb_mapadev.sql`.
+2 - Insertar datos iniciales - Ingresar a 02-data_insertion y ejecutar el script `script_insersion_datos.sql`.
+3 - Vistas - Ingresar a 03-views y ejecutar el script `script_views_mapadev.sql`.
+4 - Funciones - Ingresar a 04-functions y ejecutar el script `script_create_functions_mapadev.sql`.
+5 - Procedimientos Almacenados - Ingresar a 05-store_procedures y ejecutar el script `script_create_store_procedures_mapadev.sql`.
+6 - Triggers - Ingresar a 06-triggers y ejecutar el script `script_create_triggers_mapadev.sql`.
+7 - Usuarios y Roles - Ingresar a 07-users_roles y ejecutar el script `script_create_users_and_roles.sql`.
+8 - Transacciones TCL - Ingresar a 08-transactions y ejecutar el script `script_tcl.sql`.
+9 - Backup y Restauracion - Ingresar a 09-backup y ejecutar el script `mapadev_20240101.sql`.
+
+Repositorio dedicado al curso de SQL de coderhouse. Creado por Franco Carbone en 2024.
