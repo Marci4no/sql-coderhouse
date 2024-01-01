@@ -17,13 +17,13 @@ CREATE TABLE IF NOT EXISTS Reparticion (
 
 -- Creación de la tabla ReferenteGCBA si no existe
 CREATE TABLE IF NOT EXISTS ReferenteGCBA (
-    id_referente VARCHAR(30) NOT NULL,
+    id_referente VARCHAR(50) NOT NULL,
     nombre VARCHAR(50) NOT NULL,
     apellido VARCHAR(50) NOT NULL,
     correo_oficial VARCHAR(50) NOT NULL,
     cargo VARCHAR(50) NOT NULL,
     numero_contacto VARCHAR(10) NOT NULL,
-    id_reparticion VARCHAR(50) NOT NULL,
+    id_reparticion VARCHAR(30) NOT NULL,
     cantidad_proyectos INT(50),
     PRIMARY KEY (id_referente)
 );
