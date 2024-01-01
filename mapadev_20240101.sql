@@ -67,7 +67,7 @@ CREATE TABLE `logpresupuesto` (
 
 LOCK TABLES `logpresupuesto` WRITE;
 /*!40000 ALTER TABLE `logpresupuesto` DISABLE KEYS */;
-INSERT INTO `logpresupuesto` VALUES (1,'Pliego1','UPDATE','2023-12-27 02:57:29'),(2,'Pliego11','INSERT','2023-12-27 02:57:29');
+INSERT INTO `logpresupuesto` VALUES (1,'Pliego1','UPDATE','2024-01-01 21:53:12'),(2,'Pliego11','INSERT','2024-01-01 21:53:12');
 /*!40000 ALTER TABLE `logpresupuesto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,7 +93,7 @@ CREATE TABLE `logproyecto` (
 
 LOCK TABLES `logproyecto` WRITE;
 /*!40000 ALTER TABLE `logproyecto` DISABLE KEYS */;
-INSERT INTO `logproyecto` VALUES (1,'P1','UPDATE','2023-12-27 02:57:29'),(2,'P11','INSERT','2023-12-27 02:57:29');
+INSERT INTO `logproyecto` VALUES (1,'P1','UPDATE','2024-01-01 21:53:12'),(2,'P11','INSERT','2024-01-01 21:53:12');
 /*!40000 ALTER TABLE `logproyecto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -138,7 +138,7 @@ DROP TABLE IF EXISTS `pagoproveedores`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `pagoproveedores` (
   `id_pago` varchar(50) NOT NULL,
-  `proveedor_desarrollo` varchar(50) NOT NULL,
+  `proveedor_desarrollo` varchar(100) NOT NULL,
   `ultimo_pago` varchar(100) NOT NULL,
   `proximo_pago` varchar(100) NOT NULL,
   `vencimiento_ultimo_pago` date NOT NULL,
@@ -158,7 +158,7 @@ CREATE TABLE `pagoproveedores` (
 
 LOCK TABLES `pagoproveedores` WRITE;
 /*!40000 ALTER TABLE `pagoproveedores` DISABLE KEYS */;
-INSERT INTO `pagoproveedores` VALUES ('HASH001','CyS','20040.00','22040.00','2023-11-15','2023-11-12','2023-12-15',0,'En regla con los pagos'),('HASH0010','MindTech','10890.00','17290.00','2023-11-15','2023-11-13','2023-12-15',0,'En regla con los pago'),('HASH002','Hexacta','37800.00','37450.00','2023-11-01','2023-11-01','2023-12-01',0,'En regla con los pagos'),('HASH003','Most','15140.00','13140.00','2023-11-10','2023-11-08','2023-12-10',0,'En regla con los pagos'),('HASH004','TecnoSoft','10300.00','20300.00','2023-11-15','2023-11-16','2023-12-15',1,'Esta en deuda por falta de pago total de Noviembre y atraso en el pago'),('HASH005','DevTech','15689.00','18659.00','2023-11-01','2023-11-01','2023-12-01',0,'En regla con los pago'),('HASH006','CyS','90000.00','95060.00','2023-11-10','2023-11-08','2023-12-10',0,'En regla con los pago'),('HASH007','QuickSolutions','66403.00','57403.00','2023-11-15','2023-11-14','2023-12-15',0,'En regla con los pago'),('HASH008','Hexacta','14067.00','12068.00','2023-11-01','2023-11-01','2023-12-01',0,'En regla con los pago'),('HASH009','SoftSys','50670.00','60670.00','2023-11-10','2023-11-11','2023-12-10',1,'Esta en deuda por falta de pago total de Noviembre y atraso en el pago');
+INSERT INTO `pagoproveedores` VALUES ('HASH001','NuevoProveedor','20040.00','22040.00','2023-11-15','2023-11-12','2023-12-15',0,'En regla con los pagos'),('HASH0010','MindTech','10890.00','17290.00','2023-11-15','2023-11-13','2023-12-15',0,'En regla con los pago'),('HASH002','Hexacta','37800.00','37450.00','2023-11-01','2023-11-01','2023-12-01',0,'En regla con los pagos'),('HASH003','Most','15140.00','13140.00','2023-11-10','2023-11-08','2023-12-10',0,'En regla con los pagos'),('HASH004','TecnoSoft','10300.00','20300.00','2023-11-15','2023-11-16','2023-12-15',1,'Esta en deuda por falta de pago total de Noviembre y atraso en el pago'),('HASH005','DevTech','15689.00','18659.00','2023-11-01','2023-11-01','2023-12-01',0,'En regla con los pago'),('HASH006','NuevoProveedor','90000.00','95060.00','2023-11-10','2023-11-08','2023-12-10',0,'En regla con los pago'),('HASH007','QuickSolutions','66403.00','57403.00','2023-11-15','2023-11-14','2023-12-15',0,'En regla con los pago'),('HASH008','Hexacta','14067.00','12068.00','2023-11-01','2023-11-01','2023-12-01',0,'En regla con los pago'),('HASH009','SoftSys','50670.00','60670.00','2023-11-10','2023-11-11','2023-12-10',1,'Esta en deuda por falta de pago total de Noviembre y atraso en el pago');
 /*!40000 ALTER TABLE `pagoproveedores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,7 +178,7 @@ CREATE TABLE `presupuesto` (
   `fecha_actualizacion_contrato` date NOT NULL,
   `fecha_fin_contrato` date NOT NULL,
   `observaciones` varchar(300) NOT NULL,
-  `proveedor_desarrollo` varchar(50) NOT NULL,
+  `proveedor_desarrollo` varchar(100) NOT NULL,
   PRIMARY KEY (`id_pliego`),
   KEY `id_proyecto` (`id_proyecto`),
   CONSTRAINT `presupuesto_ibfk_1` FOREIGN KEY (`id_proyecto`) REFERENCES `proyecto` (`id_proyecto`)
@@ -197,11 +197,11 @@ UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `Presupuesto_After_Insert` AFTER INSERT ON `presupuesto` FOR EACH ROW BEGIN
     INSERT INTO LogPresupuesto (id_pliego, accion)
@@ -215,11 +215,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `Presupuesto_Before_Update` BEFORE UPDATE ON `presupuesto` FOR EACH ROW BEGIN
     INSERT INTO LogPresupuesto (id_pliego, accion)
@@ -243,7 +243,7 @@ CREATE TABLE `proyecto` (
   `id_reparticion` varchar(50) NOT NULL,
   `fecha_inicio` date NOT NULL,
   `fecha_actualizacion` date NOT NULL,
-  `proveedor_desarrollo` varchar(50) NOT NULL,
+  `proveedor_desarrollo` varchar(100) NOT NULL,
   `id_referente` varchar(50) NOT NULL,
   `componentes` int DEFAULT NULL,
   PRIMARY KEY (`id_proyecto`),
@@ -267,11 +267,11 @@ UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `Proyecto_After_Insert` AFTER INSERT ON `proyecto` FOR EACH ROW BEGIN
     INSERT INTO LogProyecto (id_proyecto, accion)
@@ -285,11 +285,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `Proyecto_Before_Update` BEFORE UPDATE ON `proyecto` FOR EACH ROW BEGIN
     INSERT INTO LogProyecto (id_proyecto, accion)
@@ -309,13 +309,13 @@ DROP TABLE IF EXISTS `referentegcba`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `referentegcba` (
-  `id_referente` varchar(30) NOT NULL,
+  `id_referente` varchar(50) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL,
   `correo_oficial` varchar(50) NOT NULL,
   `cargo` varchar(50) NOT NULL,
   `numero_contacto` varchar(10) NOT NULL,
-  `id_reparticion` varchar(50) NOT NULL,
+  `id_reparticion` varchar(30) NOT NULL,
   `cantidad_proyectos` int DEFAULT NULL,
   PRIMARY KEY (`id_referente`),
   KEY `id_reparticion` (`id_reparticion`),
@@ -486,17 +486,21 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Dumping events for database 'mapa_aplicaciones_dev'
+--
+
+--
 -- Dumping routines for database 'mapa_aplicaciones_dev'
 --
 /*!50003 DROP FUNCTION IF EXISTS `DetallePresupuestoProyecto` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` FUNCTION `DetallePresupuestoProyecto`(proyecto_id VARCHAR(50)) RETURNS text CHARSET utf8mb4
     READS SQL DATA
@@ -519,11 +523,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` FUNCTION `ProyectosPorMinisterio`(ministerio_nombre VARCHAR(100)) RETURNS text CHARSET utf8mb4
     READS SQL DATA
@@ -547,11 +551,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertarEnReparticion`(
     IN id_reparticion_param VARCHAR(30),
@@ -585,11 +589,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `OrdenarTabla`(
     IN campo_ordenamiento VARCHAR(50),
@@ -627,9 +631,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb3 */;
-/*!50001 SET character_set_results     = utf8mb3 */;
-/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `vistapresupuestosministerio` AS select `r`.`ministerio` AS `ministerio`,`p`.`id_pliego` AS `id_pliego`,`p`.`presupuesto_asignado_2023` AS `presupuesto_asignado_2023`,`p`.`modalidad_contratacion` AS `modalidad_contratacion`,`p`.`fecha_inicio_contrato` AS `fecha_inicio_contrato`,`p`.`fecha_fin_contrato` AS `fecha_fin_contrato` from ((`presupuesto` `p` join `proyecto` `pr` on((`p`.`id_proyecto` = `pr`.`id_proyecto`))) join `reparticion` `r` on((`pr`.`id_reparticion` = `r`.`id_reparticion`))) */;
@@ -645,9 +649,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb3 */;
-/*!50001 SET character_set_results     = utf8mb3 */;
-/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `vistaproyectosreferentegcba` AS select `rg`.`id_referente` AS `id_referente`,`rg`.`nombre` AS `nombre`,`rg`.`apellido` AS `apellido`,`p`.`id_proyecto` AS `id_proyecto`,`p`.`fecha_inicio` AS `fecha_inicio`,`p`.`fecha_actualizacion` AS `fecha_actualizacion`,`p`.`proveedor_desarrollo` AS `proveedor_desarrollo` from (`referentegcba` `rg` join `proyecto` `p` on((`rg`.`id_referente` = `p`.`id_referente`))) */;
@@ -663,9 +667,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb3 */;
-/*!50001 SET character_set_results     = utf8mb3 */;
-/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `vistaproyectostecnologias` AS select `p`.`id_proyecto` AS `id_proyecto`,`p`.`fecha_inicio` AS `fecha_inicio`,`p`.`fecha_actualizacion` AS `fecha_actualizacion`,`p`.`proveedor_desarrollo` AS `proveedor_desarrollo`,`t`.`nombre_tecnologia` AS `nombre_tecnologia`,`t`.`version` AS `version`,`t`.`fecha_inicio_soporte` AS `fecha_inicio_soporte`,`t`.`fecha_fin_soporte` AS `fecha_fin_soporte` from (`proyecto` `p` join `tecnologia` `t` on((`p`.`id_proyecto` = `t`.`id_proyecto`))) */;
@@ -681,9 +685,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb3 */;
-/*!50001 SET character_set_results     = utf8mb3 */;
-/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `vistaresumenpresupuestos` AS select `p`.`id_proyecto` AS `id_proyecto`,`p`.`presupuesto_asignado_2023` AS `presupuesto_asignado_2023`,`p`.`modalidad_contratacion` AS `modalidad_contratacion`,`p`.`fecha_inicio_contrato` AS `fecha_inicio_contrato`,`p`.`fecha_fin_contrato` AS `fecha_fin_contrato`,`r`.`ministerio` AS `ministerio`,`r`.`nombre_funcionario` AS `nombre_referente`,`rg`.`nombre` AS `nombre_referente_gcba` from (((`presupuesto` `p` join `proyecto` `pr` on((`p`.`id_proyecto` = `pr`.`id_proyecto`))) join `reparticion` `r` on((`pr`.`id_reparticion` = `r`.`id_reparticion`))) join `referentegcba` `rg` on((`pr`.`id_referente` = `rg`.`id_referente`))) */;
@@ -699,9 +703,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb3 */;
-/*!50001 SET character_set_results     = utf8mb3 */;
-/*!50001 SET collation_connection      = utf8mb3_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `vistatecnologiashomologadas` AS select `tecnologia`.`id_tecnologia` AS `id_tecnologia`,`tecnologia`.`nombre_tecnologia` AS `nombre_tecnologia`,`tecnologia`.`version` AS `version`,`tecnologia`.`fecha_inicio_soporte` AS `fecha_inicio_soporte`,`tecnologia`.`fecha_fin_soporte` AS `fecha_fin_soporte` from `tecnologia` where (`tecnologia`.`homologada` = true) */;
@@ -718,5 +722,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-27  0:00:12
-
+-- Dump completed on 2024-01-01 18:54:46

@@ -83,6 +83,6 @@ Para visualizar un ejemplo de transacción con sentencias rollback, commit y sav
 
 ## Backup
 
-Para importar el dump del schema mapa_aplicaciones_dev, ejecutar el script `mapa_dev26122023.sql`.
+Para importar el dump del schema mapa_aplicaciones_dev, ejecutar el script `mapadev_20240101.sql`.
 
 Repositorio dedicado al curso de SQL de coderhouse. Creado por Franco Carbone en octubre de 2023.
