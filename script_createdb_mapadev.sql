@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS Proyecto (
     id_reparticion VARCHAR(50) NOT NULL,
     fecha_inicio DATE NOT NULL,
     fecha_actualizacion DATE NOT NULL,
-    proveedor_desarrollo VARCHAR(50) NOT NULL,
+    proveedor_desarrollo VARCHAR(100) NOT NULL,
     id_referente VARCHAR(50) NOT NULL,
     componentes INT(50),
     PRIMARY KEY (id_proyecto)
@@ -66,14 +66,14 @@ CREATE TABLE IF NOT EXISTS Presupuesto (
     fecha_actualizacion_contrato DATE NOT NULL,
     fecha_fin_contrato DATE NOT NULL,
     observaciones VARCHAR(300) NOT NULL,
-    proveedor_desarrollo VARCHAR(50) NOT NULL,
+    proveedor_desarrollo VARCHAR(100) NOT NULL,
     PRIMARY KEY (id_pliego)
 );
 
 -- Creación de la tabla Pago a Proveedores si no existe
 CREATE TABLE IF NOT EXISTS PagoProveedores (
     id_pago VARCHAR(50) NOT NULL,
-    proveedor_desarrollo VARCHAR(50) NOT NULL,
+    proveedor_desarrollo VARCHAR(100) NOT NULL,
     ultimo_pago VARCHAR(100) NOT NULL,
     proximo_pago VARCHAR(100) NOT NULL,
     vencimiento_ultimo_pago DATE NOT NULL,
